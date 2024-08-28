@@ -1,0 +1,77 @@
+h1, p{
+    font-family: "Zen Kurenaido", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: bold;
+}
+
+body {
+    background-color:rgb(230, 241, 239);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh
+}
+
+#gameboard {
+    width: 300px;
+    height: 300px; 
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 1px black;
+}
+
+.square {
+  width:  100px;
+  height: 100px;
+  background-color: white;  
+  border: solid 2px black;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.山 {
+    /*border-radius: 50%;
+    border: 15px solid blue;
+    box-sizing: border-box; */
+
+    height: 90px;
+    width: 90px;
+    background-image: url("./img/yama.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.海 {
+    height: 90px;
+    width: 90px;
+    position: relative;
+    /*transform: rotate(45deg);*/
+    background-image: url("./img/umi.png");
+}
+/*
+.海:before, .海:after {
+    content: "";
+    position: absolute;
+    background-color: red;
+}
+
+.海:before {
+ left: 50%;
+ width: 30%;
+ height: 100%; 
+ margin-left: -15%;  
+}
+
+.海:after {
+    top: 50%;
+    height: 30%;
+    width: 100%; 
+    margin-top: -15%;   
+   } */
