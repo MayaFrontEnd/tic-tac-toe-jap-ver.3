@@ -1,12 +1,20 @@
-h1, p{
-    font-family: "Zen Kurenaido", sans-serif;
+h1, p {
+    font-family: "Yuji Syuku", serif;
     font-weight: 400;
     font-style: normal;
     font-weight: bold;
 }
 
+h1 {
+    font-size: 40px;
+}
+p {
+    font-size: 25px;
+}
+
 body {
     background-color:rgb(230, 241, 239);
+    background-image: url('img/mountain-sea.jpg'); ;
     margin: 0;
     padding: 0;
     display: flex;
@@ -34,14 +42,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .山 {
-    /*border-radius: 50%;
-    border: 15px solid blue;
-    box-sizing: border-box; */
-
-    height: 90px;
+   height: 90px;
     width: 90px;
     background-image: url("./img/yama.png");
     background-repeat: no-repeat;
@@ -52,26 +57,27 @@ body {
     height: 90px;
     width: 90px;
     position: relative;
-    /*transform: rotate(45deg);*/
     background-image: url("./img/umi.png");
 }
+
+.square .山,
+.square .海 {
+    cursor: not-allowed;
+}
+
 /*
-.海:before, .海:after {
-    content: "";
-    position: absolute;
-    background-color: red;
+.gameboard.海 .square:hover {
+    
 }
 
-.海:before {
- left: 50%;
- width: 30%;
- height: 100%; 
- margin-left: -15%;  
+.square.海::before,
+.square.海::after,
+.gameboard.海 .square:hover::before,
+.gameboard.海 .square:hover::after {
+    height: 90px;
+    width: 90px;
+    position: relative;
+    background-image: url("./img/umi.png");
 }
+*/
 
-.海:after {
-    top: 50%;
-    height: 30%;
-    width: 100%; 
-    margin-top: -15%;   
-   } */

@@ -21,10 +21,23 @@ function addGo(e){
     goDisplay.classList.add(go)
     e.target.append(goDisplay)
     go = go === "山" ? "海" : "山"
-    infoDisplay.textContent = "次は " + go + "のターンです"
+    infoDisplay.textContent = "次は " + go + " のターンです"
+
+   if (go === "海"){          //if go is 海...
+    document.body.style.backgroundImage="url(img/sea.jpg)";  //change background image to "sea"
+   } else {                //if not...
+    document.body.style.backgroundImage="url(img/mountain.jpg)"; // specify the image path here                   // 
+   }                 
+   
     e.target.removeEventListener("click", addGo)
     checkScore()
 }
+
+
+
+/*
+if go === 山 {
+return console.log(go)}*/
 
 function checkScore(){
    const allSquares = document.querySelectorAll(".square") 
@@ -34,12 +47,16 @@ function checkScore(){
     [0,4,8],[2,4,6]
    ]
 
+   let isGameOver = false;
+
    winningCombos.forEach(array => {
     const circleWins = array.every(cell =>
          allSquares[cell].firstChild?.classList.contains("山"))
     if (circleWins) {
-            infoDisplay.textContent = "【結論】：やっぱり山がいいよね !"
-            allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
+        infoDisplay.textContent = "【結論】：「山」の勝ち！ やっぱり山がいいですよね !"
+        allSquares.forEach(square => square.replaceWith(square.cloneNode(true)));
+        isGameOver = true;
+        document.body.style.backgroundImage="url(img/mountain.jpg)";  //change background image to "mountain"
            }
    })
    
@@ -47,9 +64,28 @@ function checkScore(){
     const crossWins = array.every(cell =>
          allSquares[cell].firstChild?.classList.contains("海"))
     if (crossWins) {
-            infoDisplay.textContent = "【結論】：やっぱり海が最高 !"
-            allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
+            infoDisplay.textContent = "【結論】：「海」の勝ち！やっぱり海が最高です !"
+           allSquares.forEach(square => square.replaceWith(square.cloneNode(true)));
+           isGameOver = true;
+           document.body.style.backgroundImage="url(img/sea.jpg)";  //change background image to "sea"
            }
    })
 
+   if(isGameOver){
+    return;
+   }
+
+   const nodeArray = Array.from(allSquares);
+   let isDraw = nodeArray.every(cell => (cell?.firstChild?.classList.contains("海") || cell?.firstChild?.classList?.contains("山")));
+
+
+   if(isDraw){
+    infoDisplay.textContent = "【結論】引き分け！どちらも素晴らしい !";
+    document.body.style.backgroundImage="url(img/mountain-sea.jpg)";  //change background image to "mountain-sea"
+   }
+}
+
+function checkAllSquares(){
+    const circleWins = array.every(cell =>
+        allSquares[cell].firstChild?.classList.contains("山"))
 }

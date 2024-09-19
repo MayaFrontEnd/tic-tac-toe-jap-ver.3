@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">i
+        <meta charset="UTF-8">
         <title>Tic-tac-toe JavaScript</title>
         <link rel="stylesheet" href="styles.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>海と山どっちがいい？(マルバツゲーム)</h1>
-        <p>【質問】夏休みに行くなら、山と海どっちがいい？</p>
-        <div id="gameboard"></div>
+        <h1><ruby>山<rt>やま</rt></ruby>と<ruby>海<rt>うみ</rt></ruby>どちらが <ruby>好<rt>す</rt></ruby>きですか？(マルバツゲーム)</h1>
+        <p>【<ruby>質問<rt>しつもん</rt></ruby>】<ruby>夏休<rt>なつやす</rt><ruby>みです。<ruby>山<rt>やま</rt></ruby>と<ruby>海<rt>うみ</rt></ruby>どちらに<ruby>行<rt>い</rt></ruby>きたいですか？ </p>
+        <div id="gameboard" class="海"></div>
         <p id="info"></p>
+       <!-- <div class="winning-message" id="winningMessage">
+            <div data-winning-message-text></div>
+            <button　id="restartBtton">もう一回</button>
+        </div> -->
         <script src="app.js"></script>
     </body>
 </html>
